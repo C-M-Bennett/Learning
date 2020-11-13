@@ -1,10 +1,15 @@
+/* #95ed34 green colour of logo
+*/
 *{
     margin: 0;
+    box-sizing: border-box
 }
 html, body{
     height: 100%;
 }
-a:link{text-decoration: none;}
+a:link{
+    text-decoration: none;
+}
 body
 {    
     background-color: #cccccc;
@@ -14,7 +19,15 @@ body
 }
 p{
     padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }
+.desc{
+    margin: 0em;
+    padding: 0em;
+}
+
+/*navigation*/
 header, footer{
     display: block;
     left: 0;
@@ -31,19 +44,30 @@ footer{
     bottom: 0;
     border-top: 0.2em solid #000000;
 }
-nav a:link{
-    color: #000000;
-    font-weight: bold;
-
-}
-nav a:visited{
-    color: #000000;
-}
 nav>ul>li{
     display: inline-block;
     padding: 0 1em;
     list-style: none;
 }
+nav a:link{
+    color: #000000;
+    font-weight: bold;
+    font-size: larger;
+}
+nav a:visited{
+    color: #404040;
+}
+nav a.active{
+    color: #000000;;
+}
+nav a:hover{
+    color: #95ed34;
+}
+
+
+
+
+
 main{
     display: block;
     padding-top: 2em;
@@ -51,31 +75,46 @@ main{
     min-height: 90%;
     max-width: 100%;
 }
-.banner{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 75%;
-    padding: 1em;
-}
 h1{
     text-align: center;
     font-weight: bold;
     font-size: 2em;
 }
+.test{
+    padding: 0em;
+}
+.columns{
+    padding: 2em, 0em;
+}
 
-aside, article{
+/*pictures*/
+.banner{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
     padding: 1em;
 }
+.option{
+    display: block;
+    border: solid 0.2em;
+    border-radius: 0.5em;
+    width: 10em ;
+}
 aside{
+    padding: 1em;
     text-align: center;
 }
 
+
+
+/*not mobile*/
 @media only screen and (min-width:768px){
     main{
         display: flex;
     }
     aside{
-        margin-left: 5%;
+        margin: 1em;
     }
 }

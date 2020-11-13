@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tests</title>
+    <title>The Para Lab | Tests</title>
     <link rel="stylesheet" href="parastyle.css"type=text/css>
 </head>
 <body>
@@ -11,7 +11,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="tests.html">Tests</a></li>
+                <li><a class="active" href="tests.html">Tests</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>       
@@ -23,7 +23,38 @@
         </aside>
        
         <article>
- 
+            <section class="columns-desktop">
+
+                <div class="test">
+                    <img src="images/pinworm.jpg" class="option" alt="worm egg">
+                    <div class="columns">
+                        <div class="title">Worm Egg Count</div>
+                        <div class="price">£18.00</div>
+                    <p class="desc"> Test for worms and worm eggs (includes enumeration)</p>    
+                    <button data-order="WEC">Request</button>
+                    </div>
+                </div>
+
+                <div class="test">
+                    <img src="images/giardiatroph.png" class="option" alt="giardia">
+                    <div class="columns">
+                        <div class="title">Parasite Combo</div>
+                        <div class="price">£25.00</div>
+                        <p class="desc"> Test for the most common domestic animal endoparasites by checking for worm eggs and Giardia (includes enumeration of worm eggs)</p>    
+                        <button data-order="WEC&GIAR">Request</button>
+                    </div>
+                </div>
+
+                <div class="test">
+                    <img src="images/demodex.jpg" class="option" alt="worm egg">
+                    <div class="columns">
+                        <div class="title">Skin Scrape</div>
+                        <div class="price">£15.00</div>
+                    <p class="desc"> Examination of hair and skin for ectoparasites and fungal elements</p>    
+                    <button data-order="WEC">Request</button>
+                </div>
+
+            </section>
         </article>
     </main>
 
@@ -32,7 +63,7 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="tests.html">Tests</a></li>
+            <li><a class="active" href="tests.html">Tests</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
