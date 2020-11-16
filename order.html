@@ -24,6 +24,42 @@
        
         <article>
             <h1>Order</h1>
+            <form action="http://" method="POST">
+                <input type="hidden" id="test-order" name="test-order">
+                <input type="hidden" id="loaction" name="location">
+
+
+                <div class="input-group">
+                    <div><label for="first-name">First Name</label></div>
+                    <div><input type="text" name="first-name" id="first-name"></div>
+                </div>
+                <div class="input-group">
+                    <div><label for="last-name">Last Name</label></div>
+                    <div><input type="text" name="last-name" id="last-name"></div>
+                </div> 
+                <div class="input-group">
+                    <div><label for="county">County</label></div>
+                    <div><input type="text" name="address" id="address"></div>
+                </div>
+                    <select name="county" id="county">
+                        <option value="" selected>[Select One]</option>
+                        <option value="derby">Derby</option>
+                        <option value="merseyside">Merseyside</option>
+                        <option value="staffordshire">Staffordshire</option>
+                    </select>
+                
+                <div class="input-group">
+                    <div><label for="postcode">Postcode</label></div>
+                    <div><input type="text" name="postcode" id="postcode"></div>
+                </div> 
+
+
+
+                    </select>
+            </form>
+
+
+
         </article>
     </main>
     <footer>
@@ -36,4 +72,44 @@
         </nav>
     </footer>
 </body>
+<script>
+    window.addEventListener("DOMContentLoaded", function(e) {
+        let locationBox = document.querySelector("#location");
+
+        let location = {
+            latitude: ("unknown"),
+            longitude: ("unknown")
+        };
+        window.navigator.geolocation.getCurrentPosition(
+            function(position) {
+                location = {
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude
+                };
+               locationBox.value =  JSON.stringify(location);
+            },
+            function(error) {
+                locationBox.value = JSON.stringify(location);
+            });
+
+        const order = localStorage.getItem("order");
+
+        if(order) {
+            const testOrder = JSON.parse(order);
+
+            const orderInput = document.querySelector("#test-order");
+            orderInput.value = order;
+
+            const test = document.querySelector(".test")
+
+            const title = test.querySelector(".title");
+            const price = test.querySelector("price");
+
+        }
+    }
+    
+    )
+
+
+</script>
 </html>
