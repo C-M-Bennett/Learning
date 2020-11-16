@@ -31,7 +31,7 @@
                         <div class="title">Worm Egg Count</div>
                         <div class="price">£18.00</div>
                     <p class="desc"> Test for worms and worm eggs (includes enumeration)</p>    
-                    <button data-order="WEC">Request</button>
+                    <button data-order="wec">Order</button>
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@
                         <div class="title">Parasite Combo</div>
                         <div class="price">£25.00</div>
                         <p class="desc"> Test for the most common domestic animal endoparasites by checking for worm eggs and Giardia (includes enumeration of worm eggs)</p>    
-                        <button data-order="WEC&GIAR">Request</button>
+                        <button data-order="wecgiar">Order</button>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@
                         <div class="title">Skin Scrape</div>
                         <div class="price">£15.00</div>
                     <p class="desc"> Examination of hair and skin for ectoparasites and fungal elements</p>    
-                    <button data-order="WEC">Request</button>
+                    <button data-order="skinscrape">Order</button>
                 </div>
 
             </section>
@@ -59,6 +59,31 @@
     </main>
 
 </body>
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function(e) {
+        const orderButtons = document.querySelectorAll("button[data-order]");
+
+        orderButtons.forEach(function(button) {
+            button.addEventListener("click", function(e) {
+                const button = e.currentTarget;
+                const container = button.parentNode;
+
+                const order = {
+                    id: button.getAttribute("data-order"),
+                    title: container.querySelector(".title").innerText,
+                    price: container.querySelector(".price").innerText,
+                    desc: container.querySelector(".desc").innerText
+                };
+                localStorage.setItem("order", JSON.stringify(order));
+
+                const url = window.location.href.replace("tests.html", "order.html");
+                window.location.href = url;
+            });
+        });
+    });
+</script>
+
+
 <footer>
     <nav>
         <ul>
